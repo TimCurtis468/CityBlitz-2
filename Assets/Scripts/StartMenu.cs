@@ -17,7 +17,7 @@ public class StartMenu : MonoBehaviour
 
         //Utilities.ResizeAndPositionSprite(Title.gameObject);
         //Utilities.ResizeAndPositionSprite(button.gameObject);
-        //Utilities.ResizeAndPositionSprite(loading.gameObject);
+        Utilities.ResizeAndPositionSprite(loading.gameObject);
         //Utilities.ResizeSpriteToFullScreen(background.gameObject);
 
         //AdManager.Instance.RequestBanner(GoogleMobileAds.Api.AdPosition.Bottom);
