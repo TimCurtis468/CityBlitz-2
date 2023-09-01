@@ -22,9 +22,9 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        //GameObject obj;
-        //Transform transform;
-        //Transform childTransform;
+        GameObject obj;
+        Transform transform;
+        Transform childTransform;
 
         GameManager.OnLifeGained += OnLifeGained;
 
@@ -33,20 +33,19 @@ public class UIManager : MonoBehaviour
         Bomb.OnBombTargetHit += UpdateScoreText;
         UpdateScoreText(0);
 
-        //transform = background_obj.transform;
-        //childTransform = transform.Find("Graphics");
-        //obj = childTransform.gameObject;
-        //Utilities.ResizeSpriteToFullScreen(obj);
+        transform = background_obj.transform;
+        childTransform = transform.Find("Graphics");
+        obj = childTransform.gameObject;
+        Utilities.ResizeSpriteToFullScreen(obj);
 
+        string txt = "LIVES: " + GameManager.Instance.Lives.ToString();
+        LivesText.text = txt;
     }
 
     private void Awake()
     {
         is_daytime = true;
         spriteRenderer = background_obj.GetComponent<SpriteRenderer>();
-
-        string txt = "LIVES: " + GameManager.Instance.Lives.ToString();
-        LivesText.text = txt;
     }
 
 
