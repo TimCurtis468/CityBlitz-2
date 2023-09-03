@@ -26,7 +26,7 @@ public class HighscoreTable : MonoBehaviour
 
         GameScoreText.text = "SCORE: " + EndScreen.score.ToString().PadLeft(5, '0');
 
-        string jsonString = PlayerPrefs.GetString("highscoreTable");
+        string jsonString = PlayerPrefs.GetString("highscoreTableCityBlitz");
         Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
 
         highscoreEntryTransformList = new List<Transform>();
@@ -71,7 +71,7 @@ public class HighscoreTable : MonoBehaviour
 
         // Load saved highscores
 
-        string jsonString = PlayerPrefs.GetString("highscoreTable");
+        string jsonString = PlayerPrefs.GetString("highscoreTableCityBlitz");
         if (jsonString == "")
         {
             highscores = new Highscores();
@@ -112,7 +112,7 @@ public class HighscoreTable : MonoBehaviour
 
         // Save updated highscores
         string json = JsonUtility.ToJson(highscores);
-        PlayerPrefs.SetString("highscoreTable", json);
+        PlayerPrefs.SetString("highscoreTableCityBlitz", json);
         PlayerPrefs.Save();
     }
 

@@ -180,7 +180,8 @@ public class GameManager : MonoBehaviour
                 gameOver.SetActive(true);
                 gameOverActive = true;
                 Plane.Instance.game_over = true;
-                //MusicManager.Instance.StopMusic();
+                MusicManager.Instance.StopMusic();
+                MoveToGameOver();
             }
         }
     }
@@ -251,7 +252,7 @@ public class GameManager : MonoBehaviour
 //        AdManager.Instance.DestroyBanner();
 
 //        Paddle.Instance.isActive = true;
-//        EndScreen.score = endScore;
+        EndScreen.score = endScore;
         SceneManager.LoadScene("GameOver");
     }
 #if (PI)
